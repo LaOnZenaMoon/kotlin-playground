@@ -5,6 +5,17 @@ fun main(args: Array<String>) {
     printItemUsingForLoop(items)
     printItemUsingWhileLoop(items)
     streamApi(items)
+    printCharacter()
+}
+
+fun printCharacter() {
+    for (i in 'a' .. 'e') println(i)
+    for (i in 'a' until 'e') println(i)
+    for (i in ('a' until 'e').reversed()) println(i)
+    val intArray = arrayOf(0, 1, 2, 3, 4)
+    for (index in intArray.indices) {
+        print(index)
+    }
 }
 
 private fun streamApi(items: List<String>) {
