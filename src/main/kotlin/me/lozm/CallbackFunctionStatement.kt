@@ -32,6 +32,18 @@ fun main() {
         successCallback = { println("Success: $it") },
         errorCallback = { println("Error: $it") }
     )
+
+    localFunction()
+}
+
+fun localFunction() {
+    val outsideVariable = true
+
+    fun localFoo() {
+        println(outsideVariable)
+    }
+
+    localFoo()
 }
 
 fun invokeApi(
