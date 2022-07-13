@@ -69,7 +69,7 @@ abstract class Shape(
 
 interface DrawAble {
     fun draw() {
-       println("DrawAble draw()")
+        println("DrawAble draw()")
     }
 }
 
@@ -85,7 +85,7 @@ open class Rectangle(
     val width: Int,
     val height: Int
 ) : Shape(x, y) {
-//    , DrawAble, DrawAble2 {
+    //    , DrawAble, DrawAble2 {
     override val area: Double
         get() {
 //            super<DrawAble>.draw()
@@ -129,6 +129,31 @@ private operator fun Any.getValue(circle: Circle, property: KProperty<*>): Strin
     TODO("Not yet implemented")
 }
 
+data class Person(val name: String, val address: String)
+
+//sealed class Result {
+//    object Success : Result()
+//    class Failure(val message: String) : Result()
+//
+//}
+//
+//fun load() = Result.Success
+
+
 fun main() {
-    val shape = Rectangle(1, 2, 3, 4)
+    val (name, address) = Person("junlee", "seoul")
+    println("name = ${name}")
+    println("address = ${address}")
+
+//    val list = List<Person>
+//    for ((name, address) in list) {
+//        println("name = ${name}")
+//        println("address = ${address}")
+//    }
+
+//    val result = load()
+//    when (result) {
+//        Result.Success -> onSuccess()
+//        is Result.Failure  -> onFailure(result.message)
+//    }
 }
